@@ -26,6 +26,7 @@ body {
     align-items: center;
 }
 header {
+    position: relative;
     width: 100%;
     height: 5rem;
     display: flex;
@@ -35,14 +36,23 @@ header {
     background-color: var(--primary-color);
     color: var(--clear);
     padding: 12px;
+    overflow-y: visible;
+    z-index: 2;
 }
 .title {
     display: inline-block;
     font-size: 1.3rem;
     margin:  0 1rem ;
 }
+.checkbox {
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0;
+}
 .header-left {
-    position: relative;
     display: flex;
     align-items: center;
 }
@@ -71,6 +81,7 @@ header .close-session:hover {
     background-color: var(--blue-light);
     color: var(--secondary-color);
 }
+
 .hamburger {
     border-radius: 8px;
     width: 30px;
@@ -191,17 +202,29 @@ main {
         position: absolute;
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 200px;
         height: 300px;
         background-color: var(--blue-medium);
         color: var(--clear);
         padding: 4px;
         border-radius: 8px 0 0 8px;
-        top: 60px;
+        top: -600px;
+        right: 0;
         left: auto;
-        right: -600px;
         transition: 300ms;
         z-index: -1;
+    }
+    .checkbox:checked ~ .links-container {
+        top: 80px;
+        right: 0;
+        left: auto;
+        z-index: 1;
+        transition: 250ms;
+    }
+    .links-container ul li {
+    margin: 8px 0;
+    border-bottom: 1px solid var(--secondary-color);
     }
     .search-form input {
         width: 90%;
@@ -215,19 +238,10 @@ main {
         pointer-events: none;
         
     }
-    .checkbox {
-        position: absolute;
-        z-index: 1;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        opacity: 0;
-    }
-    .checkbox::after {
-        margin-left: 20px;
-    }
     .checkbox:checked ~ .hamburger .stripe-2{
         display: none;
+        
+        
     }
     .checkbox:checked ~ .hamburger .stripe-1,
     .checkbox:checked ~ .hamburger .stripe-3{
@@ -238,23 +252,14 @@ main {
     .checkbox:checked ~ .hamburger .stripe-3{
         transform: rotate(135deg);
     }
-
-    .checkbox:checked ~ .links-container {
-        
-        right: 0;
-        z-index: 1;
-        transition: 250ms;
-    }
-    .links-container ul li {
-    margin: 8px 0;
-    border-bottom: 1px solid var(--secondary-color);
+    header .close-session {
+        background-color: var(--red);
+        color: var(--clear);
     }
 }
 @media (max-width: 500px) {
     header {
-        justify-content: center;
+        justify-content: space-around;
     }
-    .close-session {
-        display: none;
-    }
+    
 }
