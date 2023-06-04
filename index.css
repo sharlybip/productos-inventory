@@ -60,20 +60,23 @@ header {
     margin-inline-end: 12px;
 }
 .links-item {
-    display: inline-block;
     margin-inline-end: .5rem;
     padding: .5rem;
     border-radius: 12px;
     font-size: small;
+    color: var(--clear);
+    text-decoration: none;
+    
 }
+
 .links-item:hover {
     background-color: var(--clear-trans);
 }
 header .close-session {
     background-color: var(--blue-medium);
     border: none;
-    color: var(--clear);
     padding: 8px;
+    color: var(--clear);
     border-radius: 12px;
     margin-inline-end: 12px;
 }
@@ -167,6 +170,7 @@ main {
     color: var(--clear);
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 .btn-modify {
     background-color: var(--blue-light)
