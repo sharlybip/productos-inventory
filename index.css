@@ -23,7 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-items: center;
+    height: 100vh;
 }
 header {
     position: relative;
@@ -140,7 +140,7 @@ main {
 }
 .table {
     display: flex;
-    width: 90%.5rem;
+    width:  100%;
     overflow-x: scroll;
     border-radius: 12px;
 
@@ -153,6 +153,7 @@ main {
 }
 .table tr {
     height: 3rem;
+    text-align: center;
 }
 .table .row-white {
     background-color: none;
@@ -163,7 +164,10 @@ main {
 .table td, .table th {
     padding-left: 8px;
     padding-left: 8px;
-    min-width: 10rem;
+    min-width: 7.5rem;
+}
+.table .actions {
+    min-width: 15.5rem;
 }
 .btn {
     padding: 8px;
@@ -188,8 +192,22 @@ main {
     background-color: rgb(231, 180, 11);
     color: var(--primary-color);
 }
-
-@media (max-width: 940px) {
+footer {
+    bottom: 0;
+    height: 2rem;
+    width: 100%;
+    background-color: var(--blue-medium);
+    color: var(--clear);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@media (min-width: 1440px ) {
+    main {
+        max-width: 1300px;
+    }    
+}
+@media (max-width: 840px) {
     .links-container {
         position: absolute;
         display: flex;
@@ -247,6 +265,9 @@ main {
         background-color: var(--red);
         color: var(--clear);
         align-self: center;
+        position: absolute;
+        top:auto;
+        bottom: 20px;
     }
 }
 @media (max-width: 500px) {
