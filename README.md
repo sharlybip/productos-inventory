@@ -7,3 +7,6 @@
 git clone https://github.com/sharlybip/products-inventory.git 
 
 ```
+visita la vista previa de la página aqui
+
+https://sharlybip.github.io/products-inventory/
